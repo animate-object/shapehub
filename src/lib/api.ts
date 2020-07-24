@@ -16,6 +16,7 @@ import { Shape } from './shape'
 export const getShapes = (limit: number): Record<number, Shape> => {
     const apiData =  shapesAPI(limit)
 
+    // TypeCasting::
     // typecasting is one of typescript's 'escape hatches'
     // when you know more than the compiler, you can override it
     // - typecasting should generally be avoided because makes typechecking less effective
