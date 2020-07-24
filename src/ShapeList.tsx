@@ -2,6 +2,8 @@ import { Shape } from './lib/shape'
 import React from 'react';
 import { ShapeView } from './Shape'
 
+
+// examples: interfaces, generics, function types
 interface Props {
     shapes: Shape[]
     favorites: Set<number>

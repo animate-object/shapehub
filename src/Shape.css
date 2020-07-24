@@ -7,3 +7,14 @@
   border-bottom: 1px solid black;
   min-height: 400px;
 }
+
+.action-buttons {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 2px;
+}
+
+.action-buttons > button:not(:last-child) {
+  margin-right: 1rem;
+}

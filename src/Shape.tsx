@@ -86,7 +86,7 @@ export const ShapeView: React.FC<Props> = ({
   return (
     <div className="shape-row">
       <div>{getShapeElement(shape)}</div>
-      <div style={{ padding: "1rem" }}>
+      <div className='action-buttons'>
         <button onClick={() => setShowInfo(!showInfo)}>Show Info</button>
         {!favorited && <button onClick={handleSelect}>Add To Favorites</button>}
       </div>
