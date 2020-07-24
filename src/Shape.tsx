@@ -9,6 +9,7 @@ import {
 } from "./lib/shape";
 import "./Shape.css";
 
+// Example: using typeguards
 const commonProperties = (shape: Shape): React.CSSProperties => {
   return {
     backgroundColor: shape.color,
@@ -53,6 +54,8 @@ interface Props {
   onSelectShape: (id: number) => void;
 }
 
+
+// Example:: using Discriminated Unions
 const getShapeElement = (shape: Shape): JSX.Element => {
   switch (shape.type) {
     case "Circle":

@@ -4,15 +4,19 @@ import { getShapes } from "./lib/api";
 import { Shape } from "./lib/shape";
 import { ShapeList } from "./ShapeList";
 
+const SHAPE_COUNT = 150
+
+// A string Union type
 type AppView = "All" | "Favorites";
 
+// Example:: Record types, generic types,
 function App(): JSX.Element {
   const [shapes, setShapes] = React.useState<Record<number, Shape>>({});
   const [favorites, setFavorites] = React.useState<Set<number>>(new Set());
   const [activeView, setView] = React.useState<AppView>("All");
 
   React.useEffect(() => {
-    setShapes(getShapes(250));
+    setShapes(getShapes(SHAPE_COUNT));
   }, [setShapes]);
 
   return (
@@ -32,11 +36,7 @@ function App(): JSX.Element {
           : Array.from(favorites.values()).map((id) => shapes[id])}
       />
       <button
-        style={{
-          position: "fixed",
-          bottom: "10px",
-          right: "10px",
-        }}
+        className='fab'
         onClick={() => setView(activeView === "All" ? "Favorites" : "All")}
       >
         {activeView === "All" ? "Show Favorites" : "Show All"}

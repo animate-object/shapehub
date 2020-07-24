@@ -16,3 +16,9 @@ body {
 .subheader {
   font-size: 28px;
 }
+
+.fab {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}

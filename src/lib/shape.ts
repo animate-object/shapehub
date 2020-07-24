@@ -89,6 +89,14 @@ const QUADRILATERAL_INFO: Partial<Record<ShapeType, string>> = {
 }
 
 
+// Pick::
+// Sort of like partial, except you specify which keys from `Type`
+// that you want to use. The properties you 'pick' have the same
+// type as the Antecedent.
+const ELLIPSE_INFO: Pick<Record<ShapeType, string>, 'Circle'> = {
+    'Circle': 'A Circle is a special case of an ellipse!'
+}
+
 // example usage: type gaurds, Records over unions, partial records, `in` keyword
 export const displayShape = (shape: Shape): string => {
     let message = `This ${shape.type} was submitted by `
@@ -104,6 +112,10 @@ export const displayShape = (shape: Shape): string => {
     
     if (shape.type in QUADRILATERAL_INFO) {
         message += QUADRILATERAL_INFO[shape.type]
+    }
+
+    if (shape.type === 'Circle') {
+        message += ELLIPSE_INFO[shape.type]
     }
 
     return message
