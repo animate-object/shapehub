@@ -76,7 +76,7 @@ export const everyoneIsSpecial = (_shape: BaseShape): _shape is SpecialShape => 
 const SHAPE_DESCRIPTORS: Record<ShapeType, string> = {
     'Circle': 'a round shape.',
     'Square': 'a special rectangle.',
-    'Rectangle': 'sort of like a square.' 
+    'Rectangle': 'sort of like a square.',
 }
 
 // Partial::
@@ -88,7 +88,6 @@ const QUADRILATERAL_INFO: Partial<Record<ShapeType, string>> = {
     'Square': "It's area is given by sidelength squared!",
 }
 
-
 // Pick::
 // Sort of like partial, except you specify which keys from `Type`
 // that you want to use. The properties you 'pick' have the same
@@ -99,6 +98,10 @@ const ELLIPSE_INFO: Pick<Record<ShapeType, string>, 'Circle'> = {
 
 // example usage: type gaurds, Records over unions, partial records, `in` keyword
 export const displayShape = (shape: Shape): string => {
+
+
+    const name: string = shape.author?.name || "An anonymouse user"
+
     let message = `This ${shape.type} was submitted by `
     message += (shape.author ? shape.author.name : 'an anonymous user') + '.\n'
     message += `It is ${shape.color}.\n`
