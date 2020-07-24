@@ -1,0 +1,9 @@
+.shape-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+  min-height: 400px;
+}

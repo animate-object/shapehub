@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { getShapes } from "./lib/api";
+import { Shape } from "./lib/shape";
+import { ShapeList } from "./ShapeList";
 
-function App() {
+type AppView = "All" | "Favorites";
+
+function App(): JSX.Element {
+  const [shapes, setShapes] = React.useState<Record<number, Shape>>({});
+  const [favorites, setFavorites] = React.useState<Set<number>>(new Set());
+  const [activeView, setView] = React.useState<AppView>("All");
+
+  React.useEffect(() => {
+    setShapes(getShapes(250));
+  }, [setShapes]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="header">
+        Shape Center
+        <div className="subheader">
+          Putting shapes, front and center
+        </div>
       </header>
+      <ShapeList
+        favorites={favorites}
+        onSelectShape={(id) =>
+          setFavorites(new Set([...Array.from(favorites), id]))}
+        shapes={activeView === "All"
+          ? Object.values(shapes)
+          : Array.from(favorites.values()).map((id) => shapes[id])}
+      />
+      <button
+        style={{
+          position: "fixed",
+          bottom: "10px",
+          right: "10px",
+        }}
+        onClick={() => setView(activeView === "All" ? "Favorites" : "All")}
+      >
+        {activeView === "All" ? "Show Favorites" : "Show All"}
+      </button>
     </div>
   );
 }
