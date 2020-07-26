@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/shapehub/static/css/main.8c51ec13.chunk.css",
+    "main.js": "/shapehub/static/js/main.1ed5e63e.chunk.js",
+    "main.js.map": "/shapehub/static/js/main.1ed5e63e.chunk.js.map",
+    "runtime-main.js": "/shapehub/static/js/runtime-main.328dac62.js",
+    "runtime-main.js.map": "/shapehub/static/js/runtime-main.328dac62.js.map",
+    "static/js/2.b425bd6d.chunk.js": "/shapehub/static/js/2.b425bd6d.chunk.js",
+    "static/js/2.b425bd6d.chunk.js.map": "/shapehub/static/js/2.b425bd6d.chunk.js.map",
+    "index.html": "/shapehub/index.html",
+    "precache-manifest.3d51f2fa412b6732123adbd2d4914a70.js": "/shapehub/precache-manifest.3d51f2fa412b6732123adbd2d4914a70.js",
+    "service-worker.js": "/shapehub/service-worker.js",
+    "static/css/main.8c51ec13.chunk.css.map": "/shapehub/static/css/main.8c51ec13.chunk.css.map",
+    "static/js/2.b425bd6d.chunk.js.LICENSE.txt": "/shapehub/static/js/2.b425bd6d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.328dac62.js",
+    "static/js/2.b425bd6d.chunk.js",
+    "static/css/main.8c51ec13.chunk.css",
+    "static/js/main.1ed5e63e.chunk.js"
+  ]
+}
